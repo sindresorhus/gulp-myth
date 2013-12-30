@@ -2,7 +2,7 @@
 
 > [Myth](https://github.com/segmentio/myth) - Postprocessor that polyfills CSS
 
-*Issues with the output should be reported on the [Myth repo](https://github.com/segmentio/myth).*
+*Issues with the output should be reported on the Myth [issue tracker](https://github.com/segmentio/myth).*
 
 
 ## Install
@@ -23,7 +23,7 @@ var myth = require('gulp-myth');
 gulp.task('default', function () {
 	gulp.src('src/app.css')
 		.pipe(myth())
-		.pipe(gulp.dest('dist/app.css'));
+		.pipe(gulp.dest('dist'));
 });
 ```
 
