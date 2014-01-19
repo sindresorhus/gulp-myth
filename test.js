@@ -11,5 +11,7 @@ it('should postprocess CSS using Myth', function (cb) {
 		cb();
 	});
 
-	stream.write(new gutil.File({contents: ':root{var-green:#a6c776;}a{color:var(green);}'}));
+	stream.write(new gutil.File({
+		contents: new Buffer(':root{var-green:#a6c776;}a{color:var(green);}')
+	}));
 });
