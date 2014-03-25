@@ -32,9 +32,9 @@
     "ponyfill"
   ],
   "dependencies": {
-    "gulp-util": "~2.2.12",
-    "through2": "~0.4.0",
-    "myth": "~0.3.0"
+    "gulp-util": "^2.2.12",
+    "through2": "^0.4.0",
+    "myth": "^0.3.0"
   },
   "devDependencies": {
     "mocha": "*"

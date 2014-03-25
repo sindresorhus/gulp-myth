@@ -26,6 +26,18 @@ gulp.task('default', function () {
 ```
 
 
+## API
+
+### myth(options)
+
+#### options.sourcemap
+
+Type: `boolean`
+Default: `false`
+
+Embed a Source Map.
+
+
 ## License
 
 [MIT](http://opensource.org/licenses/MIT) © [Sindre Sorhus](http://sindresorhus.com)

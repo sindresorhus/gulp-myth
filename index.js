@@ -16,7 +16,7 @@ module.exports = function (options) {
 		}
 
 		try {
-			file.contents = new Buffer(myth(file.contents.toString()));
+			file.contents = new Buffer(myth(file.contents.toString(), options));
 		} catch (err) {
 			this.emit('error', new gutil.PluginError('gulp-myth', err));
 		}
