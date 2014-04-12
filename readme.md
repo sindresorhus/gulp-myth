@@ -19,7 +19,7 @@ var gulp = require('gulp');
 var myth = require('gulp-myth');
 
 gulp.task('default', function () {
-	gulp.src('src/app.css')
+	return gulp.src('src/app.css')
 		.pipe(myth())
 		.pipe(gulp.dest('dist'));
 });
