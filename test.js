@@ -12,7 +12,7 @@ it('should postprocess CSS using Myth', function (cb) {
 	});
 
 	stream.write(new gutil.File({
-		contents: new Buffer(':root{var-green:#a6c776;}a{color:var(green);}')
+		contents: new Buffer(':root{--green:#a6c776;}a{color:var(--green);}')
 	}));
 });
 
@@ -25,6 +25,6 @@ it('should support Source Map', function (cb) {
 	});
 
 	stream.write(new gutil.File({
-		contents: new Buffer(':root{var-green:#a6c776;}a{color:var(green);}')
+		contents: new Buffer(':root{--green:#a6c776;}a{color:var(--green);}')
 	}));
 });
