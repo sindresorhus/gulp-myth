@@ -4,6 +4,8 @@ var through = require('through2');
 var myth = require('myth');
 
 module.exports = function (options) {
+	options = options || {};
+
 	return through.obj(function (file, enc, cb) {
 		if (file.isNull()) {
 			this.push(file);
@@ -14,6 +16,8 @@ module.exports = function (options) {
 			this.emit('error', new gutil.PluginError('gulp-myth', 'Streaming not supported'));
 			return cb();
 		}
+
+		options.source = file.path;
 
 		try {
 			file.contents = new Buffer(myth(file.contents.toString(), options));
