@@ -37,6 +37,12 @@ Default: `false`
 
 Embed a Source Map.
 
+#### options.browsers
+
+Type: `array`
+
+[Browsers and versions to support](https://github.com/ai/autoprefixer#browsers).
+
 
 ## License
 
