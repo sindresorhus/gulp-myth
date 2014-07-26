@@ -1,17 +1,18 @@
 'use strict';
 var assert = require('assert');
 var gutil = require('gulp-util');
-var myth = require('./index');
+var myth = require('./');
 
 it('should postprocess CSS using Myth', function (cb) {
 	var stream = myth();
 
 	stream.on('data', function (file) {
-		assert.equal(file.contents.toString(), '\n\na {\n  color: #a6c776;\n}');
+		assert.equal(file.contents.toString(), 'a {\n  color: #a6c776;\n}');
 		cb();
 	});
 
 	stream.write(new gutil.File({
+		path: __dirname + '/fixture.css',
 		contents: new Buffer(':root{--green:#a6c776;}a{color:var(--green);}')
 	}));
 });
@@ -25,6 +26,7 @@ it('should support Source Map', function (cb) {
 	});
 
 	stream.write(new gutil.File({
+		path: __dirname + '/fixture.css',
 		contents: new Buffer(':root{--green:#a6c776;}a{color:var(--green);}')
 	}));
 });
