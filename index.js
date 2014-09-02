@@ -1,6 +1,7 @@
 'use strict';
 var gutil = require('gulp-util');
 var through = require('through2');
+var objectAssign = require('object-assign');
 var myth = require('myth');
 
 module.exports = function (options) {
@@ -8,24 +9,22 @@ module.exports = function (options) {
 
 	return through.obj(function (file, enc, cb) {
 		if (file.isNull()) {
-			this.push(file);
-			return cb();
+			cb(null, file);
+			return;
 		}
 
 		if (file.isStream()) {
-			this.emit('error', new gutil.PluginError('gulp-myth', 'Streaming not supported'));
-			return cb();
+			cb(new gutil.PluginError('gulp-myth', 'Streaming not supported'));
+			return;
 		}
 
-		options.source = file.path;
+		options = objectAssign({}, options, {source: file.path});
 
 		try {
 			file.contents = new Buffer(myth(file.contents.toString(), options));
+			cb(null, file);
 		} catch (err) {
-			this.emit('error', new gutil.PluginError('gulp-myth', err, {fileName: file.path}));
+			cb(new gutil.PluginError('gulp-myth', err, {fileName: file.path}));
 		}
-
-		this.push(file);
-		cb();
 	});
 };
