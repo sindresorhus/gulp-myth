@@ -22,9 +22,11 @@ module.exports = function (options) {
 
 		try {
 			file.contents = new Buffer(myth(file.contents.toString(), options));
-			cb(null, file);
+			this.push(file);
 		} catch (err) {
-			cb(new gutil.PluginError('gulp-myth', err, {fileName: file.path}));
+			this.emit('error', new gutil.PluginError('gulp-myth', err, {fileName: file.path}));
 		}
+
+		cb();
 	});
 };
