@@ -1,4 +1,4 @@
-# [gulp](http://gulpjs.com)-myth [![Build Status](https://travis-ci.org/sindresorhus/gulp-myth.svg?branch=master)](https://travis-ci.org/sindresorhus/gulp-myth)
+# gulp [![Build Status](https://travis-ci.org/sindresorhus/gulp-myth.svg?branch=master)](https://travis-ci.org/sindresorhus/gulp-myth)
 
 > [Myth](https://github.com/segmentio/myth) - Postprocessor that polyfills CSS
 
@@ -7,7 +7,7 @@
 
 ## Install
 
-```sh
+```
 $ npm install --save-dev gulp-myth
 ```
 
