@@ -1,6 +1,6 @@
 {
   "name": "gulp-myth",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "Myth - Postprocessor that polyfills CSS",
   "license": "MIT",
   "repository": "sindresorhus/gulp-myth",
